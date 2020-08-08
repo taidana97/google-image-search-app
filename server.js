@@ -5,12 +5,15 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const bodyParser = require("body-parser");
+// const serverless = require("serverless-http");
 const cors = require("cors");
 const env = require("dotenv").config();
 
 const apiRoutes = require("./routes/api.js");
 
 const app = express();
+
+const router = express.Router();
 
 app.use("/public", express.static(process.cwd() + "/public"));
 
@@ -40,4 +43,6 @@ app.listen(process.env.PORT || 3000, function () {
   console.log("Listening on port " + process.env.PORT);
 });
 
-module.exports = app;
+// app.use("/.netlify/functions/server", router);
+
+module.exports.handler = app;

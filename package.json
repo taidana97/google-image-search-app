@@ -5,18 +5,22 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:lambda": "netlify-lambda serve .",
+    "build:lambda": "netlify-lambda build ."
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "mocha": "^7.1.1",
     "mongodb": "^2.2.22",
-    "dotenv": "^8.2.0",
+    "netlify-lambda": "^2.0.1",
     "node-fetch": "^2.6.0",
-    "body-parser": "^1.19.0"
+    "serverless-http": "^2.5.0"
   },
   "author": "White",
   "license": "ISC"
